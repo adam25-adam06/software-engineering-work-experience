@@ -3,17 +3,11 @@ package io.github.u.ways
 import io.github.u.ways.domain.Request
 
 fun challenge1(request: Request) {
-    println(
-        """
-            I've received the following request: 
-            - Name: ${request.name}
-            - Email: ${request.email}
-            - Phone: ${request.phone}
-            - Address: ${request.address}
-            - Internet: ${request.internet}
-            - VoIP: ${request.voip}
-            - Mobile: ${request.mobile}
-            - Landline: ${request.landline}
-        """.trimIndent()
-    )
+     if ((request.landline||request.mobile) && (request.internet||request.tv)) {
+println ("Routing to Telecom and Broadband department")}
+    else if (request.internet||request.tv) {
+       println("Routing to Broadband department")
+    } else if (request.landline||request.mobile){
+        println ("Routing to Telecom department")}   
 }
+
